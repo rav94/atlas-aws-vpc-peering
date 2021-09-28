@@ -18,7 +18,7 @@ resource "mongodbatlas_network_peering" "atlas-network-peering" {
 }
  
 #IP Whitelist on ATLAS side
-resource "mongodbatlas_project_ip_whitelist" "atlas-ip-whitelist" {
+resource "mongodbatlas_project_ip_access_list" "atlas-ip-access-list-1" {
   project_id = var.ATLAS_PROJECT_ID
   cidr_block = var.AWS_VPC_CIDR
   comment    = "CIDR block for AWS Public Subnet Access for Atlas"
